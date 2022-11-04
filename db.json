@@ -1,0 +1,18 @@
+{
+  "trayectoria_educativa": [
+    {
+      "id": 2,
+      "institucion": "Codo a ",
+      "Titulo": "Programador",
+      "desde": "2020",
+      "hasta": "2021"
+    },
+    {
+      "id": 3,
+      "institucion": "Codo a Codo",
+      "Titulo": "Programador",
+      "desde": "2020",
+      "hasta": "2021"
+    }
+  ]
+}

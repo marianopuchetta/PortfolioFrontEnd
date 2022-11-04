@@ -8,7 +8,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TrayectoriaEducativaComponent } from './components/trayectoria-educativa/trayectoria-educativa.component';
+import { AddTrayectoComponent } from './components/add-trayecto/add-trayecto.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +18,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms'
     ProfileComponent,
     LoginComponent,
     HomeComponent,
+    TrayectoriaEducativaComponent,
+    AddTrayectoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="onAddTrayecto($event)">
+    <div class="form-control">
+        <label class="form-label" for="institucion">Institución</label>
+        <input type="text" name="institucion" id="institucion">
+        <label class="form-label" for="titulo">Titulo</label>
+        <input type="text" name="titulo" id="titulo">
+        <label class="form-label" for="desde">Desde</label>
+        <input type="text" name="desde" id="desde">
+        <label class="form-label" for="hasta">Hasta</label>
+        <input type="text" name="hasta" id="hasta">
+        <button class="btn btn-outline-success" type="submit">Guardar</button>
+
+    </div>
+</form>

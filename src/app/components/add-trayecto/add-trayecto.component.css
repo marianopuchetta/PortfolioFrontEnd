@@ -1,0 +1,15 @@
+
+.form-control{
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 5vh;
+    width: 40%;
+}
+@media only screen and (max-width: 576px) {
+    .form-control{
+        display: flex;
+        flex-flow: column nowrap;
+        margin: 0;
+        width: 100%;
+    }
+}

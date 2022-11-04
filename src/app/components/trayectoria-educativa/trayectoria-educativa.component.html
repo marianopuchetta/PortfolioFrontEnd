@@ -1,0 +1,18 @@
+<div class="card mat-card" id="acerca_de">
+    <div id="header_trayecto">
+      <h2>Trayecto Educativo</h2>
+      <i class="fa fa-plus ms-auto " (click)="onAddTrayecto()"></i>   
+     </div>
+    <app-add-trayecto></app-add-trayecto>
+    <div id="trayecto_card">
+        <div *ngFor="let trayecto of trayectos">
+        {{trayecto.institucion}}
+         <div id="iconos">
+        <i class="fa fa-edit" (click)="onEditTrayecto(trayecto)"></i>        
+        <i class="fa fa-trash" (click)="onDeleteTrayecto(trayecto)"></i>
+    </div>
+</div>  
+   
+    </div>
+  
+</div>
