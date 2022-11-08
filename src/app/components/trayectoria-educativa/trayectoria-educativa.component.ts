@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Trayecto } from 'src/trayecto';
 
@@ -10,33 +10,44 @@ import { Trayecto } from 'src/trayecto';
   styleUrls: ['./trayectoria-educativa.component.css']
 })
 export class TrayectoriaEducativaComponent implements OnInit {
+  @Output() addTrayectoService: EventEmitter<Trayecto> = new EventEmitter();
   @Output() onDeleteTrayectoService: EventEmitter<Trayecto> = new EventEmitter();
   @Output() onEditTrayectoService: EventEmitter<Trayecto> = new EventEmitter();
-  all_data: any;
+  @Output() onToggle: EventEmitter<boolean> = new EventEmitter();
+  @Output() onToggleEditTrayecto: EventEmitter<boolean> = new EventEmitter();
+  @Output() trayecto: EventEmitter<Trayecto> = new EventEmitter();
+  isOpen = false;
   trayectos: Trayecto[] = [];
-
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.get_trayectos().subscribe((trayectos) => {
-      this.trayectos = trayectos
+      this.trayectos = trayectos;
+
     });
+
   }
-  onAddTrayecto() {
-    console.log('click add_trayecto');
+  toggle() {
+    this.isOpen = !this.isOpen;
+    this.onToggle.emit(this.isOpen);
   }
+ 
   onDeleteTrayecto(trayecto: Trayecto) {
     this.onDeleteTrayectoService.emit(trayecto);
     this.dataService.onDeleteTrayectoService(trayecto)
       .subscribe(
         () => {
           this.trayectos = this.trayectos.filter(t => {
-            console.log('click')
             return t.id !== trayecto.id
           })
         })
   }
-  onEditTrayecto(trayecto: Trayecto) {
-    this.dataService.onEditTrayectoService(trayecto).subscribe();
+ 
+  onAddTrayecto(trayecto: Trayecto) {
+    this.addTrayectoService.emit(trayecto);
+    this.dataService.addTrayectoService(trayecto).subscribe((trayecto) => {
+      this.trayectos.push(trayecto);
+     
+    })
   }
 }

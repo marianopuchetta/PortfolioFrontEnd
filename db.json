@@ -1,18 +1,32 @@
 {
   "trayectoria_educativa": [
     {
+      "id": 1,
+      "institucion": "111 Mil Programadores",
+      "titulo": "Programador",
+      "desde": "2019",
+      "hasta": "2020"
+    },
+    {
       "id": 2,
-      "institucion": "Codo a ",
-      "Titulo": "Programador",
+      "institucion": "Codo a Codo",
+      "titulo": "Programador",
       "desde": "2020",
       "hasta": "2021"
     },
     {
       "id": 3,
-      "institucion": "Codo a Codo",
-      "Titulo": "Programador",
-      "desde": "2020",
-      "hasta": "2021"
+      "institucion": "Argentina Programa",
+      "titulo": "Programador",
+      "desde": "2022",
+      "hasta": "2022"
+    },
+    {
+      "institucion": "Harvard",
+      "titulo": "Developer",
+      "desde": "2021",
+      "hasta": "2201",
+      "id": 4
     }
   ]
 }

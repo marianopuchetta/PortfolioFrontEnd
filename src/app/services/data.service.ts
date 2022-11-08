@@ -15,12 +15,9 @@ const httpOptions = {
 export class DataService {
  private apiUrl = 'http://localhost:5000/trayectoria_educativa'
   constructor(
-    private http: HttpClient) {
-
-  }
-  get_data(): Observable<any> {
-    return this.http.get('./assets/data/data.json');
-  }
+    private http: HttpClient) 
+    { }
+ 
 
   get_trayectos(): Observable<Trayecto[]> {
 
@@ -31,8 +28,12 @@ export class DataService {
 return this.http.delete<Trayecto>(url) 
 }
 onEditTrayectoService(trayecto: Trayecto){
+  console.log(trayecto.id);
   const url = `${this.apiUrl}/${trayecto.id}`
  return this.http.put<Trayecto>(url,trayecto,httpOptions); 
+}
+addTrayectoService(trayecto: Trayecto):Observable<Trayecto>{
+ return this.http.post<Trayecto>(this.apiUrl,trayecto,httpOptions); 
 }
 }
 

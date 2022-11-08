@@ -1,13 +1,46 @@
-<form [formGroup]="form" (ngSubmit)="onAddTrayecto($event)">
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)">
     <div class="form-control">
         <label class="form-label" for="institucion">Institución</label>
-        <input type="text" name="institucion" id="institucion">
+        <input type="text" name="institucion" id="institucion" formControlName="institucion">
+           <div *ngIf="Institucion?.errors  && Institucion?.touched">
+        <p *ngIf="Institucion?.hasError('required')" class="error">
+            Institucion required.
+        </p>
+    </div>
         <label class="form-label" for="titulo">Titulo</label>
-        <input type="text" name="titulo" id="titulo">
+        <input type="text" name="titulo" id="titulo" formControlName="titulo">
+        <div *ngIf="Titulo?.errors  && Titulo?.touched">
+            <p *ngIf="Titulo?.hasError('required')" class="error">
+                Se debe poner Titulo.
+            </p>
+        </div>
         <label class="form-label" for="desde">Desde</label>
-        <input type="text" name="desde" id="desde">
+        <input type="text" name="desde" id="desde" formControlName="desde">
+        <div *ngIf="Desde?.errors  && Desde?.touched">
+            <p *ngIf="Desde?.hasError('required')" class="error">
+                Agragar fecha de inicio.
+            </p>
+            <p *ngIf="Desde?.errors?.['minlength']" class="error">
+                Solo año "YYYY".
+            </p>
+            <p *ngIf="Desde?.errors?.['maxlength']" class="error">
+                Solo año "YYYY".
+            </p>
+        </div>
         <label class="form-label" for="hasta">Hasta</label>
-        <input type="text" name="hasta" id="hasta">
+        <input type="text" name="hasta" id="hasta" formControlName="hasta">
+        <div *ngIf="Hasta?.errors  && Hasta?.touched">
+            <p *ngIf="Hasta?.hasError('required')" class="error">
+                Agragar fecha de finalización.
+            </p>
+            <p *ngIf="Hasta?.errors?.['minlength']" class="error">
+                Solo año "YYYY".
+            </p>
+            <p *ngIf="Hasta?.errors?.['maxlength']" class="error">
+                Solo año "YYYY".
+            </p>
+        </div>
+        
         <button class="btn btn-outline-success" type="submit">Guardar</button>
 
     </div>

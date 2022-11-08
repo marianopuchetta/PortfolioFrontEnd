@@ -1,18 +1,34 @@
 <div class="card mat-card" id="acerca_de">
     <div id="header_trayecto">
-      <h2>Trayecto Educativo</h2>
-      <i class="fa fa-plus ms-auto " (click)="onAddTrayecto()"></i>   
-     </div>
-    <app-add-trayecto></app-add-trayecto>
+        <h2>Trayecto Educativo</h2>
+
+        <i *ngIf="!isOpen; else minus" class="fa fa-plus ms-auto " (click)="toggle()"></i>
+
+        <ng-template #minus> <i class="fa fa-minus ms-auto " (click)="toggle()"></i> </ng-template>
+
+
+    </div>
+    <div *ngIf="isOpen">
+        <app-add-trayecto 
+        (onAddTrayecto)="onAddTrayecto($event)">
+        </app-add-trayecto>
+    </div>
+
+
     <div id="trayecto_card">
+       
         <div *ngFor="let trayecto of trayectos">
-        {{trayecto.institucion}}
-         <div id="iconos">
-        <i class="fa fa-edit" (click)="onEditTrayecto(trayecto)"></i>        
-        <i class="fa fa-trash" (click)="onDeleteTrayecto(trayecto)"></i>
+            
+            {{trayecto.institucion}}
+            {{trayecto.titulo}}
+            {{trayecto.desde}} - {{trayecto.hasta}}
+            <div id="iconos">
+                <!-- <i class="fa fa-edit" (click)="onEditTrayecto(trayecto)"></i> -->
+                <i class="fa fa-edit"></i>
+              
+                <i class="fa fa-trash" (click)="onDeleteTrayecto(trayecto)"></i>
+            </div>
+        </div>
     </div>
-</div>  
-   
-    </div>
-  
+
 </div>

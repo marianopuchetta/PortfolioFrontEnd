@@ -8,12 +8,10 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class AboutComponent implements OnInit {
 all_data : any;
-  constructor(private dataPortfolio:DataService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.dataPortfolio.get_data().subscribe(data => {
-      this.all_data = data;
-    })
+  
   }
 
 }

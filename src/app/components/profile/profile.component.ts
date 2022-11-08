@@ -12,9 +12,6 @@ export class ProfileComponent implements OnInit {
   constructor(private dataPorfolio: DataService) { }
 
   ngOnInit(): void {
-    this.dataPorfolio.get_data().subscribe(data => {
-      console.log(data);
-      this.all_data = data;
-    });
+   
   }
 }
