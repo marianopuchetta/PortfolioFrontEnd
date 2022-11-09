@@ -13,18 +13,21 @@
         (onAddTrayecto)="onAddTrayecto($event)">
         </app-add-trayecto>
     </div>
+  <div *ngIf="open_edit_flag">
+                <app-edit-trayecto
+                [trayecto_to_edit]="trayecto_to_edit">
 
-
-    <div id="trayecto_card">
-       
-        <div *ngFor="let trayecto of trayectos">
-            
+                </app-edit-trayecto>
+            </div>
+   <div *ngFor="let trayecto of trayectos">
+             
+    <div id="trayecto_card">     
             {{trayecto.institucion}}
             {{trayecto.titulo}}
             {{trayecto.desde}} - {{trayecto.hasta}}
             <div id="iconos">
                 <!-- <i class="fa fa-edit" (click)="onEditTrayecto(trayecto)"></i> -->
-                <i class="fa fa-edit"></i>
+                <i class="fa fa-edit" (click)="open_edit(trayecto)"></i>
               
                 <i class="fa fa-trash" (click)="onDeleteTrayecto(trayecto)"></i>
             </div>

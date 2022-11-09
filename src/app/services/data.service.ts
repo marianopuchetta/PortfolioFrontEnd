@@ -23,6 +23,10 @@ export class DataService {
 
     return this.http.get<Trayecto[]>(this.apiUrl);
   }
+  get_trayecto(trayecto: Trayecto):Observable<Trayecto>{
+    const url = `${this.apiUrl}/${trayecto.id}`;
+    return this.http.get<Trayecto>(url);
+  }
   onDeleteTrayectoService(trayecto : Trayecto):Observable<Trayecto>{
  const url = `${this.apiUrl}/${trayecto.id}`
 return this.http.delete<Trayecto>(url) 

@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TrayectoriaEducativaComponent } from './components/trayectoria-educativa/trayectoria-educativa.component';
 import { AddTrayectoComponent } from './components/add-trayecto/add-trayecto.component';
+import { EditTrayectoComponent } from './components/edit-trayecto/edit-trayecto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { AddTrayectoComponent } from './components/add-trayecto/add-trayecto.com
     HomeComponent,
     TrayectoriaEducativaComponent,
     AddTrayectoComponent,
+    EditTrayectoComponent,
    
   ],
   imports: [

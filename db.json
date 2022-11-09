@@ -1,13 +1,6 @@
 {
   "trayectoria_educativa": [
     {
-      "id": 1,
-      "institucion": "111 Mil Programadores",
-      "titulo": "Programador",
-      "desde": "2019",
-      "hasta": "2020"
-    },
-    {
       "id": 2,
       "institucion": "Codo a Codo",
       "titulo": "Programador",
