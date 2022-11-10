@@ -27,12 +27,11 @@ export class DataService {
     const url = `${this.apiUrl}/${trayecto.id}`;
     return this.http.get<Trayecto>(url);
   }
-  onDeleteTrayectoService(trayecto : Trayecto):Observable<Trayecto>{
+  deleteTrayectoService(trayecto : Trayecto):Observable<Trayecto>{
  const url = `${this.apiUrl}/${trayecto.id}`
 return this.http.delete<Trayecto>(url) 
 }
-onEditTrayectoService(trayecto: Trayecto){
-  console.log(trayecto.id);
+editTrayectoService(trayecto: Trayecto){
   const url = `${this.apiUrl}/${trayecto.id}`
  return this.http.put<Trayecto>(url,trayecto,httpOptions); 
 }

@@ -2,17 +2,31 @@
   "trayectoria_educativa": [
     {
       "id": 2,
-      "institucion": "Codo a Codo",
+      "institucion": "Codo a Codo9",
       "titulo": "Programador",
       "desde": "2020",
       "hasta": "2021"
     },
     {
       "id": 3,
-      "institucion": "Argentina Programa",
+      "institucion": "Argentina Programa7",
       "titulo": "Programador",
       "desde": "2022",
       "hasta": "2022"
+    },
+    {
+      "institucion": "111Mil Programadores",
+      "titulo": "Developer",
+      "desde": "2019",
+      "hasta": "2020",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "institucion": "h",
+      "titulo": "h",
+      "desde": "2013",
+      "hasta": "2011"
     }
   ]
 }

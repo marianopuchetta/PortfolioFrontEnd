@@ -18,13 +18,13 @@ export class EditTrayectoComponent implements OnInit {
       institucion: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
       desde: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
-      hasta: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]]
+      hasta: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
+      id:['']
     })
   }
 
 
   ngOnInit(): void {
-    console.log(this.trayecto_to_edit)
   }
 
   get Institucion() {
@@ -39,14 +39,16 @@ export class EditTrayectoComponent implements OnInit {
   get Hasta() {
     return this.form.get("hasta");
   }
+  get Id() {
+    return this.form.get('id');
+  }
   
   onSubmit(event: Event) {
     event.preventDefault;
     if (this.form.valid) {
-      const { institucion, titulo, desde, hasta } = this.form.value;
-      const newTrayecto = { institucion, titulo, desde, hasta };
+      const { id,institucion, titulo, desde, hasta } = this.form.value;
+      const newTrayecto = { id,institucion, titulo, desde, hasta };
       this.onEditTrayecto.emit(newTrayecto);
-      console.log('click');
       this.form.reset();
     } else {
       this.form.markAllAsTouched();

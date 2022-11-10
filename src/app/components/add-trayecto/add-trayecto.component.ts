@@ -43,7 +43,6 @@ export class AddTrayectoComponent implements OnInit {
       const { institucion, titulo, desde, hasta } = this.form.value;
       const newTrayecto = { institucion, titulo, desde, hasta };
       this.onAddTrayecto.emit(newTrayecto);
-      console.log('click');
       this.form.reset();
     } else {
       this.form.markAllAsTouched();
