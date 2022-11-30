@@ -1,4 +1,13 @@
 {
+  "experiencia_laboral": [
+    {
+      "id": 2,
+      "lugar": "GOOGLE",
+      "puesto": "Backend Developer",
+      "desde": "2020",
+      "hasta": "2021"
+    }
+  ],
   "trayectoria_educativa": [
     {
       "id": 2,
@@ -23,8 +32,8 @@
     },
     {
       "id": 5,
-      "institucion": "h",
-      "titulo": "h",
+      "institucion": "MIT",
+      "titulo": "Engineer",
       "desde": "2013",
       "hasta": "2011"
     }
