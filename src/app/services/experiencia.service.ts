@@ -4,8 +4,9 @@ import { Observable } from 'rxjs';
 import { Experiencia } from 'src/experiencia';
 
 const httpOptions = {
-  'Content-Type' : 'application/json'
-}
+  headers : new HttpHeaders({
+    'Content-Type' : 'application/json'
+  })}
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,19 @@ export class ExperienciaService {
 
   constructor(private http: HttpClient) { }
 
-  get_experiencias() : Observable<Experiencia[]>{
+  get_experiencias(): Observable<Experiencia[]> {
     return this.http.get<Experiencia[]>(this.apiUrl);
   }
+  getExperienciaService(experiencia: Experiencia){
+
+  }
+  addExperienciaService(experiencia: Experiencia):Observable<Experiencia>{
+    return this.http.post<Experiencia>(this.apiUrl,experiencia,httpOptions); 
+   }
+   editExperienceService(experiencia: Experiencia){
+
+   }
+   deleteExperienceService(experiencia: Experiencia){
+
+   }
 }

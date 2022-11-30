@@ -13,6 +13,7 @@ import { TrayectoriaEducativaComponent } from './components/trayectoria-educativ
 import { AddTrayectoComponent } from './components/add-trayecto/add-trayecto.component';
 import { EditTrayectoComponent } from './components/edit-trayecto/edit-trayecto.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { AddExperienciaComponent } from './components/add-experiencia/add-experiencia.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
     AddTrayectoComponent,
     EditTrayectoComponent,
     ExperienciaComponent,
+    AddExperienciaComponent,
    
   ],
   imports: [
