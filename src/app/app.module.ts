@@ -14,6 +14,7 @@ import { AddTrayectoComponent } from './components/add-trayecto/add-trayecto.com
 import { EditTrayectoComponent } from './components/edit-trayecto/edit-trayecto.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { AddExperienciaComponent } from './components/add-experiencia/add-experiencia.component';
+import { EditExperienciaComponent } from './components/edit-experiencia/edit-experiencia.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { AddExperienciaComponent } from './components/add-experiencia/add-experi
     EditTrayectoComponent,
     ExperienciaComponent,
     AddExperienciaComponent,
+    EditExperienciaComponent,
    
   ],
   imports: [

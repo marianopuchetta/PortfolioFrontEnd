@@ -2,9 +2,9 @@
     <div id="header_experiencia">
         <h2>Experiencia Laboral</h2>
 
-        <i *ngIf="!isOpen; else minus" class="fa fa-plus ms-auto " (click)="toggle_add_experiencia()" ></i>
+        <i *ngIf="!isOpen; else minus" class="fa fa-plus ms-auto " (click)="toggleAddExperiencia()" ></i>
 
-        <ng-template #minus> <i class="fa fa-minus ms-auto " (click)="toggle_add_experiencia()" ></i> </ng-template>
+        <ng-template #minus> <i class="fa fa-minus ms-auto " (click)="toggleAddExperiencia()" ></i> </ng-template>
 
 
     </div>
@@ -14,15 +14,15 @@
         (onAddExperiencia)="onAddExperiencia($event)">
         </app-add-experiencia>
     </div>
-    <!--
-  <div *ngIf="open_edit_flag">
+    
+  <div *ngIf="open_edit_experiencia_flag">
                 <app-edit-experiencia
                 [experiencia_to_edit]="experiencia_to_edit"
                 (onEditExperiencia)="onEditExperiencia($event)">
 
                 </app-edit-experiencia>
             </div>
-        -->
+        
    <div *ngFor="let experiencia of experiencias">
              
     <div id="Experiencia_card">     
@@ -30,7 +30,7 @@
             {{experiencia.puesto}}
             {{experiencia.desde}} - {{experiencia.hasta}}
             <div id="iconos">
-                <i class="fa fa-edit" ></i>
+                <i class="fa fa-edit" (click)="openEditExperiencia(experiencia)" ></i>
               
                 <i class="fa fa-trash" ></i>
             </div>
