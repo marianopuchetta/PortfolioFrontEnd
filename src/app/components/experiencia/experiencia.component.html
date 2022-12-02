@@ -2,37 +2,43 @@
     <div id="header_experiencia">
         <h2>Experiencia Laboral</h2>
 
-        <i *ngIf="!isOpen; else minus" class="fa fa-plus ms-auto " (click)="toggleAddExperiencia()" ></i>
+        <i *ngIf="!isOpen; else minus" class="fa fa-plus ms-auto " (click)="toggleAddExperiencia()"></i>
 
-        <ng-template #minus> <i class="fa fa-minus ms-auto " (click)="toggleAddExperiencia()" ></i> </ng-template>
+        <ng-template #minus> <i class="fa fa-minus ms-auto " (click)="toggleAddExperiencia()"></i> </ng-template>
 
 
     </div>
-    
+
     <div *ngIf="isOpen">
-        <app-add-experiencia 
-        (onAddExperiencia)="onAddExperiencia($event)">
+        <app-add-experiencia (onAddExperiencia)="onAddExperiencia($event)">
         </app-add-experiencia>
     </div>
-    
-  <div *ngIf="open_edit_experiencia_flag">
-                <app-edit-experiencia
-                [experiencia_to_edit]="experiencia_to_edit"
-                (onEditExperiencia)="onEditExperiencia($event)">
 
-                </app-edit-experiencia>
+    <div *ngIf="open_edit_experiencia_flag">
+        <app-edit-experiencia [experiencia_to_edit]="experiencia_to_edit"
+            (onEditExperiencia)="onEditExperiencia($event)">
+
+        </app-edit-experiencia>
+    </div>
+
+    <div *ngFor="let experiencia of experiencias">
+
+        <div id="experiencia_card">
+            <div>
+                <label class="label">Empresa: </label>
+                {{experiencia.lugar}}
             </div>
-        
-   <div *ngFor="let experiencia of experiencias">
-             
-    <div id="Experiencia_card">     
-            {{experiencia.lugar}}
-            {{experiencia.puesto}}
-            {{experiencia.desde}} - {{experiencia.hasta}}
+            <div>
+                <label class="label">Puesto: </label>
+                {{experiencia.puesto}}
+            </div>
+            <div>
+                {{experiencia.desde}} - {{experiencia.hasta}}
+            </div>
             <div id="iconos">
-                <i class="fa fa-edit" (click)="openEditExperiencia(experiencia)" ></i>
-              
-                <i class="fa fa-trash" ></i>
+                <i class="fa fa-edit" (click)="openEditExperiencia(experiencia)"></i>
+
+                <i class="fa fa-trash" (click)="onDeleteExperiencia(experiencia)"></i>
             </div>
         </div>
     </div>

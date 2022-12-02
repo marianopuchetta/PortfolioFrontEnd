@@ -27,7 +27,10 @@ div#profile-background {
     display: flex;
     z-index: 1;
 }
+.fa{
+    font-size: 0.9rem;
 
+}
 div#profile-background img {
     width: 100%;
     border-radius: 32px 32px 0 0;
@@ -50,7 +53,9 @@ div#profile-background img {
     color: black;
 
 }
-
+.fa-trash{
+    color: red;
+}
 #info {
     position: relative;
     bottom: 20vh;
@@ -68,7 +73,9 @@ div#info-img{
     margin: 1vh 0;
 }
 
-
+label{
+    font-weight: 600;
+}
 footer {
     display: flex;
     justify-content: center;
@@ -88,7 +95,7 @@ footer .fa {
 @media only screen and (max-width: 576px) {
     
 #first-card {
-    height: 60vh;
+    height: 48vh;
 }
     div#profile-background img {
         height: 25vh;

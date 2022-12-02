@@ -9,8 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class ExperienciaComponent implements OnInit {
   @Output() addExperienciaService: EventEmitter<Experiencia> = new EventEmitter();
+  @Output() deleteExperienciaService: EventEmitter<Experiencia> = new EventEmitter();
   @Output() experiencia: EventEmitter<Experiencia> = new EventEmitter();
   @Output() onToggleAddExperiencia: EventEmitter<boolean> = new EventEmitter();
+  @Output() on_open_edit_experiencia_flag: EventEmitter<boolean> = new EventEmitter();
   @Output() onOpenEditExperiencia: EventEmitter<Experiencia> = new EventEmitter();
   @Output() editExperienciaService: EventEmitter<Experiencia> = new EventEmitter();
   experiencia_to_edit: any;
@@ -26,14 +28,18 @@ export class ExperienciaComponent implements OnInit {
   }
   toggleAddExperiencia() {
     this.isOpen = !this.isOpen;
+    this.open_edit_experiencia_flag = false;
     this.onToggleAddExperiencia.emit(this.isOpen);
   }
 
   openEditExperiencia(experiencia: Experiencia) {
     this.open_edit_experiencia_flag = !this.open_edit_experiencia_flag;
+    this.isOpen = false;
     this.experienciaService.getExperienciaService(experiencia).subscribe((experiencia) => {
       this.experiencia_to_edit = experiencia;
     })
+    this.on_open_edit_experiencia_flag.emit(this.open_edit_experiencia_flag);
+
     return this.experiencia_to_edit;
   }
 
@@ -52,9 +58,19 @@ export class ExperienciaComponent implements OnInit {
   onEditExperiencia(experiencia: Experiencia) {
     this.editExperienciaService.emit(experiencia);
     this.experienciaService.editExperienciaService(experiencia).subscribe(() => {
-          this.open_edit_experiencia_flag = !this.open_edit_experiencia_flag;
-          this.allExperiencias();
+      this.open_edit_experiencia_flag = !this.open_edit_experiencia_flag;
+      this.allExperiencias();
     });
+  }
+  onDeleteExperiencia(experiencia: Experiencia) {
+    this.deleteExperienciaService.emit(experiencia);
+    this.experienciaService.deleteExperienceService(experiencia).
+    subscribe(() => {
+      this.experiencias = this.experiencias.filter( e => {
+        return e.id !== experiencia.id;
+      })
+    })
+
   }
 
 }

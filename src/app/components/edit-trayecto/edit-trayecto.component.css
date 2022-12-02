@@ -1,9 +1,11 @@
-
 .form-control{
     display: flex;
     flex-flow: column nowrap;
     margin: 5vh;
     width: 40%;
+}
+.form-control button{
+    margin: 1vh;
 }
 .error{
     color: red;
@@ -13,6 +15,6 @@
         display: flex;
         flex-flow: column nowrap;
         margin: 0;
-        width: 100%;
+        width: 90%;
     }
 }

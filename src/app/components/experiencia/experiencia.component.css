@@ -7,11 +7,18 @@
     font-size: 1.5rem;
 
 }
+#experiencia_card{
+    display: flex;
+    flex-flow: column nowrap;
+}
+#experiencia_card label{
+    font-weight: 600;
+}
 #iconos i {
     margin: 0.5vh;
 }
 @media only screen and (max-width: 576px) {
-    #header_trayecto i{
+    #header_experiencia i{
         margin: 1vh 1vh 0 0;
         font-size: 1.3rem;
     

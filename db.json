@@ -1,13 +1,6 @@
 {
   "experiencia_laboral": [
     {
-      "id": 2,
-      "lugar": "GOOGLe",
-      "puesto": "Backend",
-      "desde": "2025",
-      "hasta": "2025"
-    },
-    {
       "lugar": "MERCADO LIBRE",
       "puesto": "SENIOR DEVELOPER",
       "desde": "2020",
