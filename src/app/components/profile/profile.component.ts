@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from '@angular/router';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/services/trayecto.service';
 
 @Component({
   selector: 'app-profile',

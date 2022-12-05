@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/services/trayecto.service';
 import { Trayecto } from 'src/trayecto';
 import { Observable} from 'rxjs';
 
