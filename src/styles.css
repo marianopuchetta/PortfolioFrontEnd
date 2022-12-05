@@ -8,29 +8,32 @@
 body {
     margin-top: 1em;
 }
-nav .fa{
+
+nav .fa {
     margin: 1vh;
 }
 
 .mat-card {
-    border: 1px solid black;
-    border-radius: 5vh;
+    border: 1.5px solid black !important;
+    border-radius: 2vh !important;
     margin: 3vh 2vh;
-    padding:  1vh;
+    padding: 2vh;
 }
 
 #first-card {
-    height: 80vh;
+    height: 73vh;
 }
 
 div#profile-background {
     display: flex;
     z-index: 1;
 }
-.fa{
+
+.fa {
     font-size: 0.9rem;
 
 }
+
 div#profile-background img {
     width: 100%;
     border-radius: 32px 32px 0 0;
@@ -53,29 +56,33 @@ div#profile-background img {
     color: black;
 
 }
-.fa-trash{
+
+.fa-trash {
     color: red;
 }
+
 #info {
     position: relative;
     bottom: 20vh;
     z-index: 1;
 }
 
-#info-nombre h1{
+#info-nombre h1 {
     font-size: 3rem;
 }
 
-div#info-img{
+div#info-img {
     display: flex;
 }
-#info-data{
+
+#info-data {
     margin: 1vh 0;
 }
 
-label{
+label {
     font-weight: 600;
 }
+
 footer {
     display: flex;
     justify-content: center;
@@ -93,32 +100,45 @@ footer .fa {
 @media only screen and (max-width: 1024px) {}
 
 @media only screen and (max-width: 576px) {
-    
-#first-card {
-    height: 48vh;
-}
+
+    .mat-card {
+        border: 1.5px solid black !important;
+        border-radius: 2vh !important;
+        margin: 2vh 1vh;
+        padding: 1.5vh;
+    }
+    #first-card {
+        height: 48vh;
+    }
+
     div#profile-background img {
         height: 25vh;
     }
+
     #profile-image {
         border-radius: 25rem;
         width: 45%;
         height: 20vh;
     }
+
     .edit-button {
         font-size: 1em;
         padding: 1vh;
     }
+
     #info {
         bottom: 10vh;
     }
-    #info-nombre h1{
+
+    #info-nombre h1 {
         font-size: 2.3rem;
     }
-    #info-titulo h2{
+
+    #info-titulo h2 {
         font-size: 1.5rem;
     }
-    #info-data{
+
+    #info-data {
         margin: 1vh 0;
     }
 }
