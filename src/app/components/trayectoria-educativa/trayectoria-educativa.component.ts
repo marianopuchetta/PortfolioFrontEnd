@@ -34,10 +34,12 @@ export class TrayectoriaEducativaComponent implements OnInit {
   }
   toggle() {
     this.isOpen = !this.isOpen;
+    this.open_edit_flag = false;
     this.onToggle.emit(this.isOpen);
   } 
    open_edit(trayecto : Trayecto) :Observable<Trayecto>{
     this.open_edit_flag = !this.open_edit_flag;
+    this.isOpen = false;
     this.dataService.get_trayecto(trayecto).subscribe((trayecto) => {
       this.trayecto_to_edit = trayecto;
     })

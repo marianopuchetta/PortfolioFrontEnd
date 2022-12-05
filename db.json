@@ -1,4 +1,40 @@
 {
+  "skills": [
+    {
+      "id": 3,
+      "nombre": "JAVAddf",
+      "nivel": "EXPERTOdd"
+    },
+    {
+      "nivel": "pricipiante",
+      "nombre": "Node",
+      "id": 4
+    },
+    {
+      "nivel": "dios",
+      "nombre": "Javascript",
+      "id": 5
+    },
+    {
+      "nivel": "senior",
+      "nombre": "springboo",
+      "id": 6
+    },
+    {
+      "nivel": "god",
+      "nombre": "futbol libre",
+      "id": 7
+    }
+  ],
+  "experiencia_laboral": [
+    {
+      "lugar": "MERCADO LIBRE",
+      "puesto": "SENIOR DEVELOPER",
+      "desde": "2020",
+      "hasta": "2022",
+      "id": 3
+    }
+  ],
   "trayectoria_educativa": [
     {
       "id": 2,
@@ -9,22 +45,15 @@
     },
     {
       "id": 3,
-      "institucion": "Argentina Programa7",
+      "institucion": "Argentina Programa",
       "titulo": "Programador",
       "desde": "2022",
       "hasta": "2022"
     },
     {
-      "institucion": "111Mil Programadores",
-      "titulo": "Developer",
-      "desde": "2019",
-      "hasta": "2020",
-      "id": 4
-    },
-    {
       "id": 5,
-      "institucion": "h",
-      "titulo": "h",
+      "institucion": "MIT",
+      "titulo": "Engineer",
       "desde": "2013",
       "hasta": "2011"
     }

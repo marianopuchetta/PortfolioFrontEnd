@@ -23,8 +23,15 @@
    <div *ngFor="let trayecto of trayectos">
              
     <div id="trayecto_card">     
+        <div>
+            <label for="institucion">Institucion: </label>
             {{trayecto.institucion}}
+
+        </div>
+        <div>
+            <label for="titulo">Titulo: </label>
             {{trayecto.titulo}}
+        </div>
             {{trayecto.desde}} - {{trayecto.hasta}}
             <div id="iconos">
                 <!-- <i class="fa fa-edit" (click)="onEditTrayecto(trayecto)"></i> -->
