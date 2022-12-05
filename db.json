@@ -2,28 +2,13 @@
   "skills": [
     {
       "id": 3,
-      "nombre": "JAVAddf",
-      "nivel": "EXPERTOdd"
+      "nombre": "JAVA",
+      "nivel": "Experto"
     },
     {
-      "nivel": "pricipiante",
-      "nombre": "Node",
-      "id": 4
-    },
-    {
-      "nivel": "dios",
+      "id": 5,
       "nombre": "Javascript",
-      "id": 5
-    },
-    {
-      "nivel": "senior",
-      "nombre": "springboo",
-      "id": 6
-    },
-    {
-      "nivel": "god",
-      "nombre": "futbol libre",
-      "id": 7
+      "nivel": "Experto"
     }
   ],
   "experiencia_laboral": [
