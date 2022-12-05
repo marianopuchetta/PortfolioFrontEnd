@@ -26,7 +26,6 @@ export class ExperienciaService {
     return this.http.post<Experiencia>(this.apiUrl,experiencia,httpOptions); 
    }
    editExperienciaService(experiencia: Experiencia):Observable<Experiencia>{
-    console.log(experiencia);
     const url = `${this.apiUrl}/${experiencia.id}`;
     return this.http.put<Experiencia>(url,experiencia,httpOptions);
    }

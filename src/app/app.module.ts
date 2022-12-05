@@ -15,6 +15,9 @@ import { EditTrayectoComponent } from './components/edit-trayecto/edit-trayecto.
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { AddExperienciaComponent } from './components/add-experiencia/add-experiencia.component';
 import { EditExperienciaComponent } from './components/edit-experiencia/edit-experiencia.component';
+import { SkillComponent } from './components/skill/skill.component';
+import { AddSkillComponent } from './components/add-skill/add-skill.component';
+import { EditSkillComponent } from './components/edit-skill/edit-skill.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,9 @@ import { EditExperienciaComponent } from './components/edit-experiencia/edit-exp
     ExperienciaComponent,
     AddExperienciaComponent,
     EditExperienciaComponent,
+    SkillComponent,
+    AddSkillComponent,
+    EditSkillComponent,
    
   ],
   imports: [

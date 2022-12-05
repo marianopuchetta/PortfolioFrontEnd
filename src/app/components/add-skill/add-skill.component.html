@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+    <div class="form-control">
+        <label class="form-label" for="nombre">Skill</label>
+        <input type="text" name="nombre" id="nombre" formControlName="nombre">
+           <div *ngIf="nombre?.errors  && nombre?.touched">
+        <p *ngIf="nombre?.hasError('required')" class="error">
+            Se debe poner skill.
+        </p>
+    </div>
+        <label class="form-label" for="nivel">Nivel</label>
+        <input type="text" name="nivel" id="nivel" formControlName="nivel">
+        <div *ngIf="nivel?.errors  && nivel?.touched">
+            <p *ngIf="nivel?.hasError('required')" class="error">
+                Se debe poner nivel.
+            </p>
+        </div>
+     
+      
+  
+        
+        <button class="btn btn-outline-success" type="submit">Guardar</button>
+
+    </div>
+</form>
