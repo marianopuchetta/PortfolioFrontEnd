@@ -13,6 +13,7 @@ export class SkillComponent implements OnInit {
   @Output() addSkillService: EventEmitter<Skill> = new EventEmitter();
   @Output() skil: EventEmitter<Skill> = new EventEmitter();
   @Output() editSkillService: EventEmitter<Skill> = new EventEmitter();
+  @Output() deleteSkillService: EventEmitter<Skill> = new EventEmitter();
   skill_to_edit: any;
   open_add_skill_flag = false;
   open_edit_skill_flag = false;
@@ -58,6 +59,15 @@ export class SkillComponent implements OnInit {
       this.open_edit_skill_flag = !this.open_edit_skill_flag;
       this.allSkills();
     })
+  }
+  onDeleteSkill(skill: Skill){
+    this.deleteSkillService.emit(skill);
+    this.skillService.deleteSkillService(skill).subscribe(() => {
+this.skills = this.skills.filter((s) => {
+  return s.id !== skill.id;
+})
+    })
+
   }
 
 }
