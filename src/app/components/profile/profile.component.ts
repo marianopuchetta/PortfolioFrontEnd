@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Data } from '@angular/router';
 import { DataService } from 'src/app/services/trayecto.service';
 
 @Component({
@@ -8,8 +7,7 @@ import { DataService } from 'src/app/services/trayecto.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  all_data: any;
-  constructor(private dataPorfolio: DataService) { }
+  constructor() { }
 
   ngOnInit(): void {
    

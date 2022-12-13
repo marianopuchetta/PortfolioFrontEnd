@@ -11,12 +11,12 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ExperienciaService {
-  private apiUrl = 'http://localhost:5000/experiencia_laboral'
+  private apiUrl = 'http://portfolio-backend-marianopuchetta.koyeb.app/'
 
   constructor(private http: HttpClient) { }
 
   getExperienciasService(): Observable<Experiencia[]> {
-    return this.http.get<Experiencia[]>(this.apiUrl);
+    return this.http.get<Experiencia[]>(this.apiUrl + "experiencias");
   }
   getExperienciaService(experiencia: Experiencia): Observable<Experiencia>{
     const url = `${this.apiUrl}/${experiencia.id}`;

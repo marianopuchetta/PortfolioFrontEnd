@@ -1,36 +1,33 @@
 <div id="login_form">
-<form [formGroup]="form" (ngSubmit)="onSend($event)">
-    <div>
-        <label class="form-label" for="email">Email: </label>
-        <input class="form-control" type="email" formControlName="email">
-    </div>
-    <!-- Gracias al getter que configuramos en el controlador -->
-    <div *ngIf="Mail?.errors  && Mail?.touched">
-        <p *ngIf="Mail?.hasError('required')" class="error">
-            Email required.
-        </p>
-        <p *ngIf="Mail?.hasError('email')" class="error">
-            Email format must be valid.
-        </p>
-    </div>
-
-    <br />
-    <div>
-        <label for="exampleInputPassword1" class="form-label">Password: </label>
-        <input class="form-control" type="password" formControlName="password" [class.border-danger]="MailValid">
-    </div>
-    <!-- Gracias al getter que configuramos en el controlador -->
-    <div *ngIf="Password?.errors  && Password?.touched">
-        <p *ngIf="Password?.hasError('required')" class="error">
-            Password required.
-        </p>
-        <p *ngIf="Password?.errors?.['minlength']" class="error">
-            The password must be 8 or more characters.
-        </p>
-    </div>
-    <br />
-    <div>
-        <button class="btn btn-outline-success" type="submit">Login</button>
-    </div>
-</form>
+    <form [formGroup]="form" (ngSubmit)="onSend($event)">
+        <div>
+            <label class="form-label" for="email">Email: </label>
+            <input class="form-control" type="email" formControlName="email">
+        </div>
+        <!-- Gracias al getter que configuramos en el controlador -->
+        <div *ngIf="Mail?.errors  && Mail?.touched">
+            <p *ngIf="Mail?.hasError('required')" class="error">
+                Email required.
+            </p>
+            <p *ngIf="Mail?.hasError('email')" class="error">
+                Email format must be valid.
+            </p>
+        </div>
+        <div>
+            <label for="exampleInputPassword1" class="form-label">Password: </label>
+            <input class="form-control" type="password" formControlName="password" [class.border-danger]="MailValid">
+        </div>
+        <!-- Gracias al getter que configuramos en el controlador -->
+        <div *ngIf="Password?.errors  && Password?.touched">
+            <p *ngIf="Password?.hasError('required')" class="error">
+                Password required.
+            </p>
+            <p *ngIf="Password?.errors?.['minlength']" class="error">
+                The password must be 8 or more characters.
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-outline-success mt-3" type="submit">Login</button>
+        </div>
+    </form>
 </div>

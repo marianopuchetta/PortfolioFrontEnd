@@ -14,19 +14,21 @@ const httpOptions = {
 })
 export class SkillService {
 
-  private apiUrl = 'http://localhost:5000/skills'
+  private apiUrl = 'http://portfolio-backend-marianopuchetta.koyeb.app/'
 
   constructor(private http:HttpClient) { }
 
   getSkillsService(): Observable<Skill[]>{
-    return this.http.get<Skill[]>(this.apiUrl)
+    return this.http.get<Skill[]>(this.apiUrl + "skills")
   }
   getSkillService(skill: Skill){
     const url = `${this.apiUrl}/${skill.id}`;
     return this.http.get<Skill>(url);
   }
   addSkillService(skill:Skill): Observable<Skill>{
-    return this.http.post<Skill>(this.apiUrl,skill,httpOptions);
+    const url = `${this.apiUrl}` + "newskill";
+    console.log(url);
+    return this.http.post<Skill>(url,skill,httpOptions);
   }
   editSkillService(skill: Skill): Observable<Skill>{
     const url = `${this.apiUrl}/${skill.id}`;
