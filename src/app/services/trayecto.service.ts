@@ -4,8 +4,8 @@ import { Observable, of } from 'rxjs';
 import { Trayecto } from 'src/trayecto';
 
 const httpOptions = {
-  headers : new HttpHeaders({
-    'Content-Type' : 'application/json'
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
   })
 }
 
@@ -13,30 +13,30 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class DataService {
- private apiUrl = 'http://localhost:5000/trayectoria_educativa'
+  private apiUrl = 'https://portfolio-backend-marianopuchetta.koyeb.app/'
   constructor(
-    private http: HttpClient) 
-    { }
- 
+    private http: HttpClient) { }
+
 
   get_trayectos(): Observable<Trayecto[]> {
 
-    return this.http.get<Trayecto[]>(this.apiUrl);
+    return this.http.get<Trayecto[]>(this.apiUrl + "trayectos");
   }
-  get_trayecto(trayecto: Trayecto):Observable<Trayecto>{
-    const url = `${this.apiUrl}/${trayecto.id}`;
+  get_trayecto(trayecto: Trayecto): Observable<Trayecto> {
+    const url = `${this.apiUrl}` + "trayecto/" + `${trayecto.id}`;
     return this.http.get<Trayecto>(url);
   }
-  deleteTrayectoService(trayecto : Trayecto):Observable<Trayecto>{
- const url = `${this.apiUrl}/${trayecto.id}`
-return this.http.delete<Trayecto>(url) 
-}
-editTrayectoService(trayecto: Trayecto){
-  const url = `${this.apiUrl}/${trayecto.id}`
- return this.http.put<Trayecto>(url,trayecto,httpOptions); 
-}
-addTrayectoService(trayecto: Trayecto):Observable<Trayecto>{
- return this.http.post<Trayecto>(this.apiUrl,trayecto,httpOptions); 
-}
+  deleteTrayectoService(trayecto: Trayecto): Observable<Trayecto> {
+    const url = `${this.apiUrl}` + "deletetrayecto/" + `${trayecto.id}`;
+    return this.http.delete<Trayecto>(url)
+  }
+  editTrayectoService(trayecto: Trayecto) {
+    const url = `${this.apiUrl}` + "edittrayecto/" + `${trayecto.id}`;
+    return this.http.put<Trayecto>(url, trayecto, httpOptions);
+  }
+  addTrayectoService(trayecto: Trayecto): Observable<Trayecto> {
+    const url = `${this.apiUrl}` + "newtrayecto";
+    return this.http.post<Trayecto>(url, trayecto, httpOptions);
+  }
 }
 
