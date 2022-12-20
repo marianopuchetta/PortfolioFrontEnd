@@ -23,6 +23,7 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.experienciaService.getExperienciasService().subscribe(experiencias => {
+      console.log(experiencias);
       this.experiencias = experiencias;
     });
   }

@@ -11,7 +11,7 @@ export class AddExperienciaComponent implements OnInit {
   form: FormGroup;
   constructor(private formBuilder : FormBuilder) {
     this.form = this.formBuilder.group({
-      lugar:['',[Validators.required]],
+      empresa:['',[Validators.required]],
       puesto:['',[Validators.required]],
       desde: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
       hasta: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]]
@@ -21,8 +21,8 @@ export class AddExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  get Lugar(){
-    return this.form.get("lugar");
+  get Empresa(){
+    return this.form.get("empresa");
   }
    get Puesto(){
     return this.form.get("puesto");
@@ -37,8 +37,8 @@ export class AddExperienciaComponent implements OnInit {
   onSubmit(event: Event){
     event.preventDefault;
     if(this.form.valid){
-      const {lugar,puesto,desde,hasta} = this.form.value;
-      const newExperiencia = {lugar,puesto,desde,hasta};
+      const {empresa,puesto,desde,hasta} = this.form.value;
+      const newExperiencia = {empresa,puesto,desde,hasta};
       this.onAddExperiencia.emit(newExperiencia);
       this.form.reset;
     } else {
