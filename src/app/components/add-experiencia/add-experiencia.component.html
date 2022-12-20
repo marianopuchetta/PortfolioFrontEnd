@@ -1,9 +1,9 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
     <div class="form-control">
-        <label class="form-label" for="lugar">Empresa</label>
-        <input type="text" name="lugar" id="lugar" formControlName="lugar">
-           <div *ngIf="Lugar?.errors  && Lugar?.touched">
-        <p *ngIf="Lugar?.hasError('required')" class="error">
+        <label class="form-label" for="empresa">Empresa</label>
+        <input type="text" name="empresa" id="empresa" formControlName="empresa">
+           <div *ngIf="Empresa?.errors  && Empresa?.touched">
+        <p *ngIf="Empresa?.hasError('required')" class="error">
             Empresa required.
         </p>
     </div>

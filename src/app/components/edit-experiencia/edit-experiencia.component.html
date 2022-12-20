@@ -2,10 +2,10 @@
     <div class="form-control">
         <input type="hidden" name="id" id="id"  [(ngModel)]="experiencia_to_edit.id" formControlName="id">
 
-        <label class="form-label" for="lugar">Empresa</label>
-        <input type="text" name="lugar" id="lugar"  [(ngModel)]="experiencia_to_edit.lugar" formControlName="lugar">
-           <div *ngIf="lugar?.errors  && lugar?.touched">
-        <p *ngIf="lugar?.hasError('required')" class="error">
+        <label class="form-label" for="empresa">Empresa</label>
+        <input type="text" name="empresa" id="empresa"  [(ngModel)]="experiencia_to_edit.empresa" formControlName="empresa">
+           <div *ngIf="Empresa?.errors  && Empresa?.touched">
+        <p *ngIf="Empresa?.hasError('required')" class="error">
             Nombre de la empresa.
         </p>
     </div>
