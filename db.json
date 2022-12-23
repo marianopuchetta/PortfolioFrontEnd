@@ -1,4 +1,20 @@
 {
+  "user": [
+    {
+      "id": 3,
+      "user_name": "admin@email.com",
+      "password": "@Admin123",
+      "role": "ADMIN",
+      "token": "tokenA"
+    },
+    {
+      "id": 5,
+      "user_name": "user@email.com",
+      "password": "@Admin123",
+      "role": "USER",
+      "token": "tokenU"
+    }
+  ],
   "skills": [
     {
       "id": 3,

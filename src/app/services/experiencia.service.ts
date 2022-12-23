@@ -20,6 +20,7 @@ export class ExperienciaService {
 
   getExperienciasService(): Observable<Experiencia[]> {
     return this.http.get<Experiencia[]>(this.apiUrl + "experiencias");
+    return this.http.get<Experiencia[]>(this.apiUrl + "experiencias");
   }
   getExperienciaService(experiencia: Experiencia): Observable<Experiencia> {
     const url = `${this.apiUrl}` + "experiencia" + `/${experiencia.id}`;
