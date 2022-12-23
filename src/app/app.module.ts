@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -19,7 +18,6 @@ import { EditExperienciaComponent } from './components/edit-experiencia/edit-exp
 import { SkillComponent } from './components/skill/skill.component';
 import { AddSkillComponent } from './components/add-skill/add-skill.component';
 import { EditSkillComponent } from './components/edit-skill/edit-skill.component';
-import { InterceptorService } from './services/interceptor.service';
 import { InterceptorService } from './services/interceptor.service';
 @NgModule({
   declarations: [
