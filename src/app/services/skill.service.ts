@@ -14,8 +14,7 @@ const httpOptions = {
 })
 export class SkillService {
 
- // private apiUrl = 'https://portfolio-backend-marianopuchetta.koyeb.app/';
-  private apiUrl = 'http://localhost:8080/';
+ private apiUrl = 'https://portfolio-backend-marianopuchetta.koyeb.app/';
 
   constructor(private http: HttpClient) { }
 

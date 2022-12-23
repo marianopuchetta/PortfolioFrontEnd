@@ -7,7 +7,7 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 })
 export class AuthService {
 
-  url = "http://localhost:8080/authenticate";
+ private url = "https://portfolio-backend-marianopuchetta.koyeb.app/authenticate";
   current_user_subject: BehaviorSubject<any>;
 
   constructor(private http: HttpClient) {
