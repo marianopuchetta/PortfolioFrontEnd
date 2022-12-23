@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from '@angular/router';
-import { DataService } from 'src/app/services/trayecto.service';
+import { TrayectoService } from 'src/app/services/trayecto.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/trayecto.service';
 })
 export class ProfileComponent implements OnInit {
   all_data: any;
-  constructor(private dataPorfolio: DataService) { }
+  constructor(private trayectoPorfolio: TrayectoService) { }
 
   ngOnInit(): void {
    

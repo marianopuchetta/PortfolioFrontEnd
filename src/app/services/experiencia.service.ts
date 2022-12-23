@@ -12,7 +12,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ExperienciaService {
-  private apiUrl = 'https://portfolio-backend-marianopuchetta.koyeb.app/'
+  //private apiUrl = 'https://portfolio-backend-marianopuchetta.koyeb.app/';
+  private apiUrl = 'http://localhost:8080/'
+
 
   constructor(private http: HttpClient) { }
 

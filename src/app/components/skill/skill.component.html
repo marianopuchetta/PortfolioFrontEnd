@@ -1,11 +1,11 @@
 <div class="card mat-card" id="acerca_de">
     <div id="header_skill">
         <h2>Skills</h2>
-
+        <div class="ms-auto " *ngIf="this.authService.isLogIn()">
         <i *ngIf="!open_add_skill_flag; else minus" class="fa fa-plus ms-auto " (click)="openAddSkill()"></i>
 
         <ng-template #minus> <i class="fa fa-minus ms-auto " (click)="openAddSkill()"></i> </ng-template>
-
+</div>
 
     </div>
 
@@ -29,7 +29,7 @@
                 <div class="item nivel">
                     {{skill.nivel}}
                 </div>
-                <div id="iconos">
+                <div id="iconos" *ngIf="this.authService.isLogIn()">
                     <i class="fa fa-edit" (click)="openEditSkill(skill)"></i>
 
                     <i class="fa fa-trash" (click)="onDeleteSkill(skill)"></i>

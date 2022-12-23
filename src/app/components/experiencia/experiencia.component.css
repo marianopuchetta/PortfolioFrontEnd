@@ -10,6 +10,7 @@
 #experiencia_card{
     display: flex;
     flex-flow: column nowrap;
+    margin: 1.3vh 0;
 }
 #experiencia_card label{
     font-weight: 600;

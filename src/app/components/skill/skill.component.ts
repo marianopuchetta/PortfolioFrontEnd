@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { SkillService } from 'src/app/services/skill.service';
 import { Skill } from 'src/skill';
 
@@ -19,7 +20,7 @@ export class SkillComponent implements OnInit {
   open_edit_skill_flag = false;
   skills: Skill[] = [];
 
-  constructor(private skillService: SkillService) { }
+  constructor(private skillService: SkillService,public authService: AuthService) { }
 
   ngOnInit(): void {
     this.skillService.getSkillsService().subscribe(skills => {

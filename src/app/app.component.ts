@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+   isLoggedIn : boolean = false;
   title = 'frontend_portfolio';
+
+
+  constructor(public authService: AuthService) { }
+
+  ngOnInit(): void {
+  }
+logout(){
+  this.authService.logout();
+  this.isLoggedIn = false;
+}
+
 }

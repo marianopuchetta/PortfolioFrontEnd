@@ -8,7 +8,9 @@
     font-size: 1.5rem;
 
 }
-
+#trayecto_card{
+    margin: 1.3vh 0;
+}
 #iconos i {
     margin: 0.5vh;
 }

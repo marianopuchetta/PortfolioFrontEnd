@@ -35,7 +35,8 @@
                         </ul>
                     </li>
                 </ul>
-                <a class="ms-auto" routerLink="/login"><button class="btn btn-outline-success ms-auto" type="submit">Login</button></a>
+                <a class="ms-auto" routerLink="/login"><button class="btn btn-outline-success ms-auto" type="submit" *ngIf="!this.authService.isLogIn()">Login</button></a>
+                <button class="btn btn-outline-success ms-auto" type="submit" (click)="logout()" *ngIf="this.authService.isLogIn()">Logout</button>
 
             </div>
         </div>

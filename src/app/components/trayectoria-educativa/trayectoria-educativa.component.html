@@ -1,42 +1,38 @@
 <div class="card mat-card" id="acerca_de">
     <div id="header_trayecto">
         <h2>Trayecto Educativo</h2>
+        <div class="ms-auto" *ngIf="this.authService.isLogIn()">
+            <i *ngIf="!isOpen; else minus" class="fa fa-plus ms-auto" (click)="toggle()"></i>
 
-        <i *ngIf="!isOpen; else minus" class="fa fa-plus ms-auto " (click)="toggle()"></i>
-
-        <ng-template #minus> <i class="fa fa-minus ms-auto " (click)="toggle()"></i> </ng-template>
-
-
+            <ng-template #minus> <i class="fa fa-minus ms-auto" (click)="toggle()"></i> </ng-template>
+        </div>
     </div>
     <div *ngIf="isOpen">
-        <app-add-trayecto 
-        (onAddTrayecto)="onAddTrayecto($event)">
+        <app-add-trayecto (onAddTrayecto)="onAddTrayecto($event)">
         </app-add-trayecto>
     </div>
-  <div *ngIf="open_edit_flag">
-                <app-edit-trayecto
-                [trayecto_to_edit]="trayecto_to_edit"
-                (onEditTrayecto)="onEditTrayecto($event)">
+    <div *ngIf="open_edit_flag">
+        <app-edit-trayecto [trayecto_to_edit]="trayecto_to_edit" (onEditTrayecto)="onEditTrayecto($event)">
 
-                </app-edit-trayecto>
+        </app-edit-trayecto>
+    </div>
+    <div *ngFor="let trayecto of trayectos">
+
+        <div id="trayecto_card">
+            <div>
+                <label for="institucion">Institucion: </label>
+                {{trayecto.institucion}}
+
             </div>
-   <div *ngFor="let trayecto of trayectos">
-             
-    <div id="trayecto_card">     
-        <div>
-            <label for="institucion">Institucion: </label>
-            {{trayecto.institucion}}
-
-        </div>
-        <div>
-            <label for="titulo">Titulo: </label>
-            {{trayecto.titulo}}
-        </div>
+            <div>
+                <label for="titulo">Titulo: </label>
+                {{trayecto.titulo}}
+            </div>
             {{trayecto.desde}} - {{trayecto.hasta}}
-            <div id="iconos">
+            <div id="iconos" *ngIf="this.authService.isLogIn()">
                 <!-- <i class="fa fa-edit" (click)="onEditTrayecto(trayecto)"></i> -->
                 <i class="fa fa-edit" (click)="open_edit(trayecto)"></i>
-              
+
                 <i class="fa fa-trash" (click)="onDeleteTrayecto(trayecto)"></i>
             </div>
         </div>

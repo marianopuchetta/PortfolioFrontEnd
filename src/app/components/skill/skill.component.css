@@ -18,7 +18,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 50%;
+    text-align: center;
 }
 #skill_card label{
     font-weight: 600;
@@ -29,6 +29,7 @@
 } 
 .nivel{
    background-color: yellow;
+   
 }
 #iconos i {
     margin: 0.5vh;
@@ -50,15 +51,13 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        width: 100%;
-        padding: 4vh;
-        border-radius: 1000vh;
+        padding: 1vh;
     }
     #skills_items_container{
         display: grid;
         grid-template-columns: 10vh 10vh ;
         grid-template-rows: 10vh 10vh;
-        column-gap: 20%;
+        column-gap: 2vh;
         justify-content: center;
     }
  

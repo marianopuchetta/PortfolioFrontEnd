@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +10,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
+  error_login: boolean= false;
+  constructor(private formBuilder: FormBuilder, private authService: AuthService,
+    private router: Router) {
 
     this.form = this.formBuilder.group({
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      email: ['', [Validators.required, Validators.email]]
+      username: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]]
     })
   }
   ngOnInit(): void {
@@ -22,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   get Mail() {
-    return this.form.get("email");
+    return this.form.get("username");
   }
 
   get PasswordValid() {
@@ -32,15 +36,20 @@ export class LoginComponent implements OnInit {
   get MailValid() {
     return false;
   }
- onSend(event : Event){
+ 
+  onSend(event: Event) {
     // Detenemos la propagación o ejecución del compotamiento submit de un form
-  event.preventDefault;
-
-  if(this.form.valid){
-    alert("ok")
-  }else{
-    this.form.markAllAsTouched();
+    event.preventDefault;
+    this.error_login = false;
+    if (this.form.valid) {
+      this.authService.login(this.form.value).subscribe(data => {
+        console.log("data: " + JSON.stringify(data));
+        this.router.navigate(['/home']);
+      }, err => {
+        this.error_login = true;
+    })
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
- }
-
 }

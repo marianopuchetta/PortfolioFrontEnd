@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { Experiencia } from 'src/experiencia';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
@@ -19,11 +20,10 @@ export class ExperienciaComponent implements OnInit {
   isOpen = false;
   open_edit_experiencia_flag = false;
   experiencias: Experiencia[] = [];
-  constructor(private experienciaService: ExperienciaService) { }
+  constructor(private experienciaService: ExperienciaService,public authService: AuthService) { }
 
   ngOnInit(): void {
     this.experienciaService.getExperienciasService().subscribe(experiencias => {
-      console.log(experiencias);
       this.experiencias = experiencias;
     });
   }

@@ -12,14 +12,15 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
-  private apiUrl = 'https://portfolio-backend-marianopuchetta.koyeb.app/'
+export class TrayectoService {
+  //private apiUrl = 'https://portfolio-backend-marianopuchetta.koyeb.app/'
+  private apiUrl = 'http://localhost:8080/'
+
   constructor(
     private http: HttpClient) { }
 
 
   get_trayectos(): Observable<Trayecto[]> {
-
     return this.http.get<Trayecto[]>(this.apiUrl + "trayectos");
   }
   get_trayecto(trayecto: Trayecto): Observable<Trayecto> {
