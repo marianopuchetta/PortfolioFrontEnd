@@ -3,21 +3,21 @@
         <input type="hidden" name="id" id="id"  [ngModel]="trayecto_to_edit?.id" formControlName="id">
 
         <label class="form-label" for="institucion">Institución</label>
-        <input type="text" name="institucion" id="institucion"  [(ngModel)]="trayecto_to_edit.institucion" formControlName="institucion">
+        <input type="text" name="institucion" id="institucion"  [ngModel]="trayecto_to_edit?.institucion" formControlName="institucion">
            <div *ngIf="Institucion?.errors  && Institucion?.touched">
         <p *ngIf="Institucion?.hasError('required')" class="error">
             Institucion required.
         </p>
     </div>
         <label class="form-label" for="titulo">Titulo</label>
-        <input type="text" name="titulo" id="titulo" [(ngModel)]="trayecto_to_edit.titulo" formControlName="titulo">
+        <input type="text" name="titulo" id="titulo" [ngModel]="trayecto_to_edit?.titulo" formControlName="titulo">
         <div *ngIf="Titulo?.errors  && Titulo?.touched">
             <p *ngIf="Titulo?.hasError('required')" class="error">
                 Se debe poner Titulo.
             </p>
         </div>
         <label class="form-label" for="desde">Desde</label>
-        <input type="text" name="desde" id="desde" [(ngModel)]="trayecto_to_edit.desde" formControlName="desde">
+        <input type="text" name="desde" id="desde" [ngModel]="trayecto_to_edit?.desde" formControlName="desde">
         <div *ngIf="Desde?.errors  && Desde?.touched">
             <p *ngIf="Desde?.hasError('required')" class="error">
                 Agragar fecha de inicio.
@@ -30,7 +30,7 @@
             </p>
         </div>
         <label class="form-label" for="hasta">Hasta</label>
-        <input type="text" name="hasta" id="hasta" [(ngModel)]="trayecto_to_edit.hasta" formControlName="hasta">
+        <input type="text" name="hasta" id="hasta" [ngModel]="trayecto_to_edit?.hasta" formControlName="hasta">
         <div *ngIf="Hasta?.errors  && Hasta?.touched">
             <p *ngIf="Hasta?.hasError('required')" class="error">
                 Agragar fecha de finalización.
