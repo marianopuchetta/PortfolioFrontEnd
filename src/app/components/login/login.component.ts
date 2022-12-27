@@ -44,7 +44,6 @@ export class LoginComponent implements OnInit {
     this.error_login = false;
     if (this.form.valid) {
       this.authService.login(this.form.value).subscribe(data => {
-        console.log("data: " + JSON.stringify(data));
         this.router.navigate(['/home']);
       }, err => {
         this.error_login = true;

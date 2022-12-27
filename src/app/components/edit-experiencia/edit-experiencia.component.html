@@ -1,6 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
     <div class="form-control">
-        <input type="hidden" name="id" id="id"  [(ngModel)]="experiencia_to_edit.id" formControlName="id">
+        <input type="hidden" name="id" id="id"  [ngModel]="experiencia_to_edit?.id" formControlName="id">
 
         <label class="form-label" for="empresa">Empresa</label>
         <input type="text" name="empresa" id="empresa"  [(ngModel)]="experiencia_to_edit.empresa" formControlName="empresa">
