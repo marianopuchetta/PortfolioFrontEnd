@@ -18,6 +18,7 @@ nav .fa {
     border-radius: 2vh !important;
     margin: 3vh 2vh;
     padding: 2vh;
+    background-color: rgba(128, 128, 128, 0.4) !important;
 }
 
 #first-card {
@@ -37,13 +38,13 @@ div#profile-background {
 div#profile-background img {
     width: 100%;
     border-radius: 32px 32px 0 0;
-    height: 37vh;
+    height: 30vh;
 }
 
 #profile-image {
     border-radius: 90rem;
     width: 17%;
-    height: 35vh;
+    height: 40vh;
     margin-left: 1em;
 }
 
@@ -112,13 +113,13 @@ footer .fa {
     }
 
     div#profile-background img {
-        height: 25vh;
+        height: 22vh;
     }
 
     #profile-image {
         border-radius: 25rem;
         width: 45%;
-        height: 20vh;
+        height: 23vh;
     }
 
     .edit-button {
